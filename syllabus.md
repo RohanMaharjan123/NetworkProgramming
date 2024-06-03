@@ -6,7 +6,7 @@
 
     1.1 Network Programing Features and Scope
     1.2 Network Programming Language, Tools & Platforms
-    1.3 Chent and Server Applications
+    1.3 Client and Server Applications
     1.4 Client server model and software design
 </p>
 
