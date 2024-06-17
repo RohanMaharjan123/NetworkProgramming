@@ -1,3 +1,5 @@
+package Lab._20240605;
+
 // InetAddress Method
 // isReachable(int timeout)
 
