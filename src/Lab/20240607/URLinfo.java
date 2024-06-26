@@ -2,41 +2,39 @@ package Lab._20240607;
 // Implement the methods of URL Class
 // URL u = new URL("http://www.google.com");
 // System.out.println(u.getProtocol());
-
 import java.net.*;
+import java.util.logging.*;
 
-// For getProtocol
 @SuppressWarnings("deprecation")
 public class URLinfo {
-    public static void main(String[] args) throws Exception {
-        URL u = new URL("https://www.google.com:443/search?q=computer+engineer&sclient=gws-wiz");
+    private static final Logger logger = Logger.getLogger(URLinfo.class.getName());
 
-        // For getProtocol
-        System.out.print("For getProtocol: ");
-        System.out.println(u.getProtocol());
+    public static void main(String[] args) {
+        try {
+            URL u = new URL("https://www.google.com:443/search?q=computer+engineer&sclient=gws-wiz");
 
-        // For getHost
-        System.out.print("For getHost: ");
-        System.out.println(u.getHost());
+            // For getProtocol
+            logger.info(() -> "For getProtocol: " + u.getProtocol());
 
-        // For getPort
-        System.out.print("For getPort: ");
-        System.out.println(u.getPort());
+            // For getHost
+            logger.info(() -> "For getHost: " + u.getHost());
 
-        // For getFile
-        System.out.print("For getFile: ");
-        System.out.println(u.getFile());
+            // For getPort
+            logger.info(() -> "For getPort: " + u.getPort());
 
-        // For getAuthority
-        System.out.print("For getAuthority: ");
-        System.out.println(u.getAuthority());
+            // For getFile
+            logger.info(() -> "For getFile: " + u.getFile());
 
-        // For getQuery
-        System.out.print("For getQuery: ");
-        System.out.println(u.getQuery());
+            // For getAuthority
+            logger.info(() -> "For getAuthority: " + u.getAuthority());
 
-        // For getDefaultPort
-        System.out.print("For getDefaultPort: ");
-        System.out.println(u.getDefaultPort());
+            // For getQuery
+            logger.info(() -> "For getQuery: " + u.getQuery());
+
+            // For getDefaultPort
+            logger.info(() -> "For getDefaultPort: " + u.getDefaultPort());
+        } catch (Exception e) {
+            logger.log(Level.SEVERE, "An error occurred", e);
+        }
     }
 }
