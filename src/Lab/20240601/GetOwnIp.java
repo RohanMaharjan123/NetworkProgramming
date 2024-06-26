@@ -1,8 +1,6 @@
 package Lab._20240601;
 
 import java.net.*;
-import java.lang.*;
-
 public class GetOwnIp {
     public static void main(String[] args) {
         try {
