@@ -1,4 +1,4 @@
-package Lab.20240626._0;
+package Lab._20240626._0;
 
 import java.net.URI;
 import java.net.URISyntaxException;

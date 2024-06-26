@@ -2,12 +2,14 @@ package Lab._20240626;
 
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.logging.Logger;
 
 public class URLResolver {
+    private static final Logger logger = Logger.getLogger(URLResolver.class.getName());
 
     public static void main(String[] args) {
         if (args.length != 2) {
-            System.err.println("Usage: java URLResolver <base_url> <relative_url>");
+            logger.severe("Usage: java URLResolver <base_url> <relative_url>");
             System.exit(1);
         }
 
@@ -17,9 +19,9 @@ public class URLResolver {
         try {
             URI baseURI = new URI(baseUrl);
             URI resolvedURI = baseURI.resolve(relativeUrl);
-            System.out.println("Resolved URL: " + resolvedURI.toString());
+            logger.info(() -> "Resolved URL: " + resolvedURI.toString());
         } catch (URISyntaxException e) {
-            System.err.println("Invalid URL: " + e.getMessage());
+            logger.severe(() -> "Invalid URL: " + e.getMessage());
         }
     }
 }
