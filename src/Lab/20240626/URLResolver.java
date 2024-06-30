@@ -19,9 +19,12 @@ public class URLResolver {
         try {
             URI baseURI = new URI(baseUrl);
             URI resolvedURI = baseURI.resolve(relativeUrl);
-            logger.info(() -> "Resolved URL: " + resolvedURI.toString());
+
+            if (logger.isLoggable(java.util.logging.Level.INFO)) {
+                logger.info(() -> String.format("Resolved URL: %s", resolvedURI.toString()));
+            }
         } catch (URISyntaxException e) {
-            logger.severe(() -> "Invalid URL: " + e.getMessage());
+            logger.severe(() -> String.format("Invalid URL: %s", e.getMessage()));
         }
     }
 }
