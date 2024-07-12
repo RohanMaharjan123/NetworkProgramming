@@ -1,6 +1,6 @@
-# Program for implementing Lookingup the ipaddress of Localhost
+# Program for implementing Looking up the ipaddress of Localhost
 
-**Name**: Program for implementing Lookingup the ipaddress of Localhost
+**Name**: Program for implementing Looking up the ipaddress of Localhost
 
 **Date**: July 12th, 2024
 
