@@ -1,25 +1,28 @@
 package Lab._20240602._0;
 
 import java.net.*;
+import java.util.logging.*;
 
-public class CheckIp{
+public class CheckIp {
+    private static final Logger logger = Logger.getLogger(CheckIp.class.getName());
+
     public static void main(String[] args) {
         try {
             InetAddress address = InetAddress.getByName("FF03:0000:1000:FEA0:0001:FF88:8081:0001");
             // InetAddress address = InetAddress.getByName("www.google.com");
-            System.out.println("IP Address: " + address.getHostAddress());
-            System.out.println("Host Name: " + address.getHostName());
+            logger.info("IP Address: " + address.getHostAddress());
+            logger.info("Host Name: " + address.getHostName());
 
             byte[] add = address.getAddress();
-            if(add.length == 4){
-                System.out.println("Address type: IPv4");
-            } else if(add.length == 16){
-                System.out.println("Address type: IPv6");
+            if (add.length == 4) {
+                logger.info("Address type: IPv4");
+            } else if (add.length == 16) {
+                logger.info("Address type: IPv6");
             } else {
-                System.out.println("Unknown address type");
+                logger.warning("Unknown address type");
             }
         } catch (UnknownHostException e) {
-            System.out.println("Could not find address ");
+            logger.severe("Could not find address");
         }
     }
 }
